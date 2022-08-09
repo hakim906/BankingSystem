@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+  }
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+.clear{
+  clear: both;
+}
+.bg-color{
+    background-color: aquamarine;
+    height: 650px;
+    width: 100%;
+    /* opacity: 0.7; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.box{
+  height: 250px;
+  width: 500px;
+  background-color: rgb(73, 99, 90);
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 2px 4px black;
+  
+}
+.Acc_num{
+  width: 80%;
+  padding: 10px;
+  margin-left: 10%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.pass{
+  width: 80%;
+  padding: 10px;
+  margin-left: 10%;
+  margin-top: 20px; 
+  border-radius: 15px;
+}
+.checkbox{
+  margin-left: 10%;
+}
+.show_password{
+  color: white;
+}
+.login{
+  margin-top: 20px;
+  margin-left: 40%;
+  padding: 10px;
+  
+}
+.first-card{
+    
+}
+.add-money{
+    width: 40%;
+    margin-left: 30%;
+}
+.diposit{
+    padding: 10px;
+}
+.second-card{
+    
+}
+.withdraw-money{
+  width: 50%;
+  /* margin-left: 20%; */
+}
+.withdraw{
+  padding: 10px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}

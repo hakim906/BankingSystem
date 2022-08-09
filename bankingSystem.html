@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankingSystem</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="bankingSystem.css">
+    <!-- css link -->
+
+    <!-- boostrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- boostrap link -->
+
+    <!-- google font Roboto -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet">
+<!-- google font Roboto -->
+
+</head>
+<body>
+    <div class="bg-color">
+    <div class="container">
+<br><br>
+        <div class="box" id="main">
+            <input type="text" class="Acc_num" placeholder="Enter your Account Number" id="Acc_num"> <br>
+            <input type="password" class="pass" placeholder="Enter your Password" id="pass"> <br>
+            <input type="checkbox" class="checkbox" onclick="showPassword()"><span class="show_password"> Show Password </span> <br>
+            <button type="button" id="login" class=" login btn  btn-info">Login</button>
+           </div>
+        
+            <div class="row" id="second">
+                <div class="first-card col-12 text-center">
+                   <h2>You're Successfully Login</h2>
+                   <h4>Your Total Balance: <span id="total"> 1000</span></h4>
+                   <br><br><br><br>
+                </div>
+<br><br>
+                <div class="second-card card col-4 text-center">
+                    <h4>Deposit: <span id="diposit">00</span></h4><br>
+                    <input type="text" id="Add_money" class="diposit" placeholder="Enter your Diposit Amonut"><br>
+                    <button type="button" id="Depo_btn" class="btn btn-secondary add-money">Add Money</button>
+
+                </div>
+
+                <div class="blank col-4">
+
+                </div>
+
+                <div class="third-card card col-4 text-center" id="third">
+                    <h4>Withdraw: <span id="withdraw">00</span></h4><br>
+                    <input type="text" id="withdraw_money" class="withdraw" placeholder="Enter your Withdraw Amonut"><br><br>
+                    <button type="button" id="withdraw_btn" class="btn btn-secondary withdraw-money">Withdraw Money</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+       var Acc_num = document.getElementById("Acc_num");
+       var pass = document.getElementById("pass");
+       var login = document.getElementById("login");
+       var main = document.getElementById("main");
+       var second = document.getElementById("second");
+       var third= document.getElementById("third");
+       second.style.display= ("none");
+       third.style.display= ("none");
+
+      login.addEventListener("click", function(){
+        if(Acc_num.value == "" || pass.value == "" ){
+           alert("Input field is require");
+       }else{
+        main.style.display= "none";
+        second.style.display= ("block");
+        third.style.display= ("block");
+       }
+      });
+
+      function showPassword(){
+        var x = document.getElementById("pass");
+        if (x.type === "password"){
+              x.type = "text";
+        }else{
+            x.type = "password";
+        }
+      }
+
+      var Depo_btn = document.getElementById("Depo_btn");
+      Depo_btn.addEventListener("click", function(){
+        var Add_money = document.getElementById("Add_money").value;
+        var new_Add_money = parseFloat(Add_money);
+
+        var diposit = document.getElementById("diposit").innerHTML;
+        var new_diposit = parseFloat(diposit);
+
+        var result = new_Add_money + new_diposit;
+        document.getElementById("diposit").innerHTML = result;
+
+        //total result
+         
+        var total = document.getElementById("total").innerHTML;
+         var New_total = parseInt(total);
+
+         var Total_result =  new_Add_money+New_total;
+        document.getElementById("total").innerHTML =Total_result;
+        
+      });
+
+
+      var withdraw_btn = document.getElementById("withdraw_btn");
+      withdraw_btn.addEventListener("click", function(){
+        var withdraw_money = document.getElementById("withdraw_money").value;
+        var new_withdraw_money = parseFloat(withdraw_money);
+
+        var withdraw = document.getElementById("withdraw").innerHTML;
+        var new_withdraw = parseFloat(withdraw);
+
+        var withdraw_result = new_withdraw_money + new_withdraw;
+        document.getElementById("withdraw").innerHTML = withdraw_result;
+
+      //  total withdrae result
+      var total = document.getElementById("total").innerHTML;
+      var New_total = parseInt(total);
+
+      var total_withdraw =  New_total -  withdraw_result ;
+      document.getElementById("total").innerHTML = total_withdraw;
+
+
+      });
+    </script>
+</body>
+</html>
